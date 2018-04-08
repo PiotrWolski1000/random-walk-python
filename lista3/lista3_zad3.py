@@ -1,11 +1,10 @@
 import matplotlib
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import random
 
 
-def zad1(N = 10000):
+def zad3(N = 10000):
     allWalkerPaths = []
     walkLength = 1000
     for i in range(0, N):
@@ -44,8 +43,6 @@ def zad1(N = 10000):
         y_values.append(allWalkerPaths[0][i][1])
         z_values.append(allWalkerPaths[0][i][2])
 
-
-
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
     plt.title('Random Walk 3D- walk')
@@ -53,4 +50,4 @@ def zad1(N = 10000):
     ax.plot(x_values, y_values, z_values, label='parametric curve')
     plt.show()
 
-zad1(1)
+zad3(1)

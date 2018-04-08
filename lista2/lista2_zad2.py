@@ -122,13 +122,13 @@ def zad2(N = 100):
     plt.show()
     plt.plot(x, myLists[1], '-x')
     plt.show()
-    plt.plot(odchylenia1, '-x')
+    plt.plot(odchylenia1, 'o')
     plt.show()
-    plt.plot(odchylenia2, '-x')
+    plt.plot(odchylenia2, 'o')
     plt.show()
 
 
-zad2(10000)
+zad2(1000)
 
 #srednia jest inna dla kazdego kroku n
 

@@ -26,20 +26,31 @@ def zad1(N = 10000):
             walkerPath.append(pos)#updating WalkerPath
         allWalkerPaths.append(walkerPath)#updating list containing all paths of each walker (N-element list)
 
+    #our data structure -> allWalkerPaths = [Walker = [ pos = [pos[0] pos[1]]], Walker, Walker]
+
     #here, outside of for loop we are finally able to show our result on the screen with some graphic chart
     #but first we have to split our date to two different arrays so: 
+
     x_values = []
     y_values = []
+    
+    #check if any walker end up in start point, which is pos[0, 0]
+    looped = 0#defines numbers of our walkers which ended up in start point
+    for i in range(0, N+1):
+        print allWalkerPaths[i][99]
+        if allWalkerPaths[i][99] == [0, 0]:
+            looped = looped +1
 
-    #choosing specific object data lets say 10nth child to display
+    print "This is how many walkers ended up in start point max(", N, "): ", looped
+
+    #choosing specific object data, lets say 10nth child to display
     for i in range(0,100):
         x_values.append(allWalkerPaths[10][i][0])#10th element,
         y_values.append(allWalkerPaths[10][i][1])
-    print x_values
-    print y_values
+
     #finally displaying our data
     plt.title('Random Walk 2D- walk')
     plt.plot(x_values,y_values, 'o-')
     plt.show()
 
-zad1(100)
+zad1(10000)
