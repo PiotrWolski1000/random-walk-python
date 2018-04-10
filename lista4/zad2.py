@@ -35,7 +35,7 @@ def zad2():
                 print aggregationParticleList
         
         #finally add new particle to list, but still under one condition
-        if checkIfConnectedToOthers(randomParticle, aggregationParticleList):
+        if checkIfConnectedToOthers(randomParticle, aggregationParticleList) and (randomParticle not in aggregationParticleList)::
             print "checkIfNotOut invoked and passed! now adding new partile to list"
             aggregationParticleList.append(randomParticle)
             

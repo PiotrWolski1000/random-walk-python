@@ -1,5 +1,5 @@
 import random
-# import matplotlib
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 # import math
@@ -32,13 +32,27 @@ def zad1():
     # for i in range(0, len(aggregationParticleList)-1):
     #     print aggregationParticleList[i]
 
+    #spliting data into two independent arrays with seperated x, y values
+    x_values = []   
+    y_values = []
+    
+    for i in range(0, len(aggregationParticleList) - 1):
+        x_values.append(aggregationParticleList[i][0])
+        y_values.append(aggregationParticleList[i][1])
+        
+
+    plt.title('Random aggregation fractal')
+    #finally we are able to display our data
+    plt.plot(x_values,y_values, 'o')
+    plt.show()
+
             
 
         
     return 0
 
 def checkIfNotOut(particleList):#return true if one of particles is outside my 'canvas'- max, else False
-    max = 10
+    max = 20
     for i in range(0, len(particleList)):
         if particleList[i][0] > max or particleList[i][0] < -max:
             return True 
