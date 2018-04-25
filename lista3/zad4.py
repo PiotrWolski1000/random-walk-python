@@ -20,9 +20,6 @@ def zad4(N = 10, h = 100):
             # while(firstTimeRide or walkerPath and not walkerPath[len(walkerPath)-1][1] == 0):
             while(pos[1] != 0):
                 randomValue = random.randint(0,100)
-
-                
-
                 if(firstTimeRide):
                     firstTimeRide = not firstTimeRide
                 

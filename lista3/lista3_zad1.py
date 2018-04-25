@@ -36,14 +36,16 @@ def zad1(N = 10000):
     
     #check if any walker end up in start point, which is pos[0, 0]
     looped = 0#defines numbers of our walkers which ended up in start point
+    
     for i in range(0, N+1):
-        print allWalkerPaths[i][99]
+        # print allWalkerPaths[i][99]
         if allWalkerPaths[i][99] == [0, 0]:
             looped = looped +1
 
     print "This is how many walkers ended up in start point max(", N, "): ", looped
 
     #choosing specific object data, lets say 10nth child to display
+    
     for i in range(0,100):
         x_values.append(allWalkerPaths[10][i][0])#10th element,
         y_values.append(allWalkerPaths[10][i][1])

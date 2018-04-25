@@ -11,7 +11,7 @@ def checkIfInside(arr, val):
 def zad2(N = 10000):
     allWalkerPaths = []
 
-    for i in range(1, N):
+    for i in range(0, N):
         walkerPath = []
         pos = [0, 0]#pos[x,y]] initialization at every new walker
         randomValue = 0

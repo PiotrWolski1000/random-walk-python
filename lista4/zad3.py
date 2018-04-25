@@ -6,7 +6,7 @@ import math
 
 def zad3():
     #first particle in the middle of our 'canvas'
-    rect_side = 10
+    rect_side = 30
     aggregationParticleList = []
     for i in range(-rect_side/2, rect_side/2):
         # print i
@@ -35,13 +35,13 @@ def zad3():
             randomValue =    random.randint(0,100)
             # print randomValue
             if randomValue >= 0 and randomValue < 25:#first option is: we go up and right        
-                newPosition = [randomParticle[0] + 1, randomParticle[1] + 1]
+                newPosition = [randomParticle[0] + 1, randomParticle[1]]
             elif randomValue >= 25 and randomValue < 50:#second optoin is: we go up and left
-                newPosition = [randomParticle[0] - 1, randomParticle[1] + 1]
+                newPosition = [randomParticle[0] - 1, randomParticle[1]]
             elif randomValue >= 50 and randomValue < 75:#third option is: we go left and down
-                newPosition = [randomParticle[0] - 1, randomParticle[1] - 1]
+                newPosition = [randomParticle[0] , randomParticle[1] - 1]
             else: #fourth option is we go right down
-                newPosition = [randomParticle[0] + 1, randomParticle[1] - 1] 
+                newPosition = [randomParticle[0] , randomParticle[1] + 1] 
             # print newPosition
             #update position with randomized step
             randomParticle = newPosition
@@ -78,7 +78,7 @@ def checkIfNotOut(particle):#returns True, when param particle is outside our ci
         return False
 
 def checkIfConnectedToOthers(newParticle, aggregationParticleList):#checks if potentiall new particle is should be connected in current position, True for yes- should, False for no- shouldn't
-    if [newParticle[0] + 1, newParticle[1] + 1] in aggregationParticleList or [newParticle[0] - 1, newParticle[1] + 1] in aggregationParticleList or [newParticle[0] - 1, newParticle[1] - 1] in aggregationParticleList or [newParticle[0] + 1, newParticle[1] - 1] in aggregationParticleList:
+    if [newParticle[0] + 1, newParticle[1] ] in aggregationParticleList or [newParticle[0] - 1, newParticle[1]] in aggregationParticleList or [newParticle[0], newParticle[1] - 1] in aggregationParticleList or [newParticle[0], newParticle[1] + 1] in aggregationParticleList:
     # if [0, 0] in aggregationParticleList:
         return True       
     return False#shouldn't be connected

@@ -10,7 +10,7 @@ def zad2():
     aggregationParticleList = [[0, 0], [0,1], [0,-1]]
     max = 150
     while len(aggregationParticleList) < n:#repeat while there is 1k elements in particle array  
-        print 'ilosc zlepkow: ', len(aggregationParticleList)
+        # print 'ilosc zlepkow: ', len(aggregationParticleList)
         randomParticle = [random.randint(-max, max), random.randint(-max, max)]#first chose particle already in List
         # randomParticle = [0,0]
         if ( checkIfNotOut(randomParticle)) and (randomParticle not in aggregationParticleList):#we have to be sure that our particle is inside our canvas and is not already in aggregationList
@@ -31,16 +31,16 @@ def zad2():
 
                 #update position with randomized step
                 randomParticle = [randomParticle[0]+newPosition[0], randomParticle[1]+newPosition[1]]
-                print "test", randomParticle
-                print aggregationParticleList
+                # print "test", randomParticle
+                # print aggregationParticleList
         
         #finally add new particle to list, but still under one condition
-        if checkIfConnectedToOthers(randomParticle, aggregationParticleList) and (randomParticle not in aggregationParticleList)::
-            print "checkIfNotOut invoked and passed! now adding new partile to list"
+        if checkIfConnectedToOthers(randomParticle, aggregationParticleList) and (randomParticle not in aggregationParticleList):
+            # print "checkIfNotOut invoked and passed! now adding new partile to list"
             aggregationParticleList.append(randomParticle)
             
-    print aggregationParticleList
-    print 'final length: ', len(aggregationParticleList)#n+1 because of first element
+    # print aggregationParticleList
+    # print 'final length: ', len(aggregationParticleList)#n+1 because of first element
 
     #spliting data into two independent arrays with seperated x, y values
     x_values = []   
@@ -57,15 +57,15 @@ def zad2():
     plt.show()
 
 def checkIfNotOut(particle):#returns True, when param particle is outside our circle's field, else returns False
-    print 'distance', math.sqrt((particle[0]**2 + particle[1]**2 ))
+    # print 'distance', math.sqrt((particle[0]**2 + particle[1]**2 ))
     radius = 150
-    print 'radius size', radius
+    # print 'radius size', radius
     if math.sqrt((particle[0]**2 + particle[1]**2 )) > radius:
-        print 'is out'
+        # print 'is out'
         return True
     else:
 
-        print particle, 'still inside circle'
+        # print particle, 'still inside circle'
         return False
 
 def checkIfConnectedToOthers(newParticle, aggregationParticleList):#checks if potentiall new particle is should be connected in current position, True for yes- should, False for no- shouldn't
